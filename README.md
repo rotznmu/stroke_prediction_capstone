@@ -56,7 +56,7 @@ We can see that our Logistic Regression Model actually was able to predict 84% o
 
 ## 6. Future Improvements
 
-* Predicting who will have a stroke and who will not is never going to be a perfect science with a 100% prediction rate, but we did learn that age is a very important feature in doing so. However, we can learn from our other models feature importance that the other health indicators like avg_glucose_levels, heart_disease and hypertension. We also learned the sociodemographic features were not that influential in our models. So from here, we can take the best features and perhaps build no models with with different datasets that contain the most influential features from our findings and other features that may prove useful. 
+* Predicting who will have a stroke and who will not is never going to be a perfect science with a 100% prediction rate, but we did learn that age is a very important feature in doing so. However, we can learn from our other models' feature importance that the other health indicators like avg_glucose_levels, heart_disease and hypertension might also be helpful to improve on future models. We also learned the sociodemographic features were not that influential in our models. So from here, we can take the best features and perhaps build new models with with different datasets that contain the most influential features from our findings and other new features that may prove useful. 
 
 ![](./files/other_feature_imp.png)
 
