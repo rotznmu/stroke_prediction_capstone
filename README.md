@@ -3,7 +3,7 @@ Using various attributes to predict the probability of stroke
 
 ![cover_photo](./files/cover_photo.jpg)
 
-*Stroke is the No.5 cause of death in the United States, and a leading cause of disability. A stroke occurs when a blood vessel is either blocked by a clot or bursts, depriving the brain of oxygen and nutrients. When that happens, the cells die in the part of the brain that isn't receiving blood. In the era of big data, doctors and researchers are constantly trying to find ways to predict those who are at risk of disease, and that is what we are trying to do here. We are trying to take some health and sociodemographic indicators and use machine learning to build a model that can predict who is at risk for stroke.  *
+*Stroke is the No.5 cause of death in the United States, and a leading cause of disability. A stroke occurs when a blood vessel is either blocked by a clot or bursts, depriving the brain of oxygen and nutrients. When that happens, the cells die in the part of the brain that isn't receiving blood. In the era of big data, doctors and researchers are constantly trying to find ways to predict those who are at risk of disease, and that is what we are trying to do here. We are trying to take some health and sociodemographic indicators and use machine learning to build a model that can predict who is at risk for stroke.*
 
 ## 1. Data
 
