@@ -20,7 +20,7 @@ Our data consists of 11 attributes: gender; age; hypertension (binary); heart_di
 
 [Median BMI by age in USA](https://dqydj.com/bmi-distribution-by-age-calculator-for-the-united-states/)
 
-* **Problem 2:** Categorical features need to be converted to numeric data  **Solution:** I used one hot encoding to convert our categorical features to numberic. 
+* **Problem 2:** Categorical features need to be converted to numeric data  **Solution:** I used one hot encoding to convert our categorical features to numeric. 
 
 * **Problem 3:** A quick look at a correlation heatmaps reveals we have many features that are highly correlated. This can lead to the multicollinearity conundrum, as our regression model's regression coefficients related to the highly correlated variables will be unreliable.  **Solution:** Wherever there were pairs of highly correlated data, I removed one of them. 
 
