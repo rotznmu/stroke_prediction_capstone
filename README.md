@@ -36,9 +36,9 @@ Our data consists of 11 attributes: gender; age; hypertension (binary); heart_di
 
 ## 4. Algorithms & Machine Learning
 
-[Initial Results](/files/summary_table.png)
+![](./files/summary_table.png)
 
-I chose to work with the Python scikit-learn's supervised machine learning methods for classification. These included: XGBoost; BernoullliNB; GausianNB; LogisticRegression; DecisionTree; RandomForest; SVC; KNN; LGBMClassifier. The highest accuracy went to Random Forest, but focusing on accuracy didn't turn out to be the best approach, as the imbalanced test set rewarded classifying almost everything as non-stroke risk. Thus, I decided to focus on recall, as a real world situation might prefer us to favor having a high number of true positives even if it is a tradeoff that leads to more false positives. We were looking for a good tradeoff though, as merely classifying everything is stroke is also unhelpful in a real world application. 
+I chose to work with the Python scikit-learn's supervised machine learning methods for classification. These included: XGBoost; BernoullliNB; GausianNB; LogisticRegression; DecisionTree; RandomForest; SVC; KNN; LGBMClassifier. The highest accuracy went to Random Forest, but focusing on accuracy didn't turn out to be the best approach, as the imbalanced test set rewarded classifying almost everything as non-stroke risk. Thus, I decided to focus on recall, as a real world situation might prefer us to favor having a high number of true positives even if it is a trade-off that leads to more false positives. We were looking for a good trade-off though, as merely classifying everything as stroke is also unhelpful in a real world application. 
 
 **WINNER: Logistic Regression Agorithm**
 
