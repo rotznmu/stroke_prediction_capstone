@@ -22,11 +22,13 @@ Our data consists of 11 attributes: gender; age; hypertension (binary); heart_di
 
 * **Problem 2:** Categorical features need to be converted to numeric data  **Solution:** I used one hot encoding to convert our categorical features to numeric. 
 
-* **Problem 3:** A quick look at a correlation heatmaps reveals we have many features that are highly correlated. This can lead to the multicollinearity conundrum, as our regression model's regression coefficients related to the highly correlated variables will be unreliable.  **Solution:** Wherever there were pairs of highly correlated data, I removed one of them. 
+* **Problem 3:** A quick look at a correlation heatmaps reveals we have many features that are highly correlated. This can lead to the multicollinearity conundrum, as our regression model's regression coefficients related to the highly correlated variables will be unreliable.  **Solution:** Wherever there were pairs of highly correlated data, I removed one of them. Additionaly, other features were removed after using Random Forest to find feature importance. We compared the performance of the models using the reduced feature set to the full feature set.  
 
-* **Problem 4:** Imbalanced dataset with the target variable. **Solution:** We used SMOTE oversampling technique to correct for this.
+* **Problem 4a:** Imbalanced dataset with the target variable. **Solution:** I used SMOTE oversampling technique to correct for this.
 
-* **Problem 5:** Non-standardized data. **Solution:** We standardized our data using StandardScaler()
+* **Problem 4b:** Applying SMOTE before using GridSearchCV lead to extreme overfitting and poor hyperparameter tuning. **Solution:** I created a custom function that manually applies oversampling for the folds being trained on so the data didn't leak to the testing fold.
+
+* **Problem 5:** Non-standardized data. **Solution:** I standardized our data using StandardScaler()
 
 ## 3. EDA
 
@@ -38,11 +40,11 @@ Our data consists of 11 attributes: gender; age; hypertension (binary); heart_di
 
 ![](./files/summary_table.png)
 
-I chose to work with the Python scikit-learn's supervised machine learning methods for classification. These included: XGBoost; BernoullliNB; GausianNB; LogisticRegression; DecisionTree; RandomForest; SVC; KNN; LGBMClassifier. The highest accuracy went to Random Forest, but focusing on accuracy didn't turn out to be the best approach, as the imbalanced test set rewarded classifying almost everything as non-stroke risk. Thus, I decided to focus on recall, as a real world situation might prefer us to favor having a high number of true positives even if it is a trade-off that leads to more false positives. We were looking for a good trade-off though, as merely classifying everything as stroke is also unhelpful in a real world application. 
+I chose to work with the Python scikit-learn's supervised machine learning methods for classification. These included: XGBoost; BernoullliNB; GausianNB; LogisticRegression; DecisionTree; RandomForest; SVC; KNN; LGBMClassifier. The highest accuracy went to Random Forest, but focusing on accuracy didn't turn out to be the best approach, as the imbalanced test set rewarded classifying almost everything as non-stroke risk. Thus, I decided to focus on recall and average precision, as a real world situation might prefer us to favor having a high number of true positives even if it is a trade-off that leads to more false positives. We were looking for a good trade-off though, as merely classifying everything as stroke is also unhelpful in a real world application. Additionally, we found that the reduced feature dataset performed better than the full feature dataset. 
 
 **WINNER: Logistic Regression Agorithm**
 
-This algorithm clearly did the best at predicting stroke. However, when we look at the feature importance we can see that the algorithm basically learned to lean almost exclusively on age. Nonetheless, given the limited features we were given, this is the algorithm that performed the best. 
+This algorithm clearly did the best at predicting stroke. However, when we look at the feature importance we can see that the algorithm basically learned to lean mostly on age. Nonetheless, given the limited features we were given, this is the algorithm that performed the best. 
 
 ![](./files/winner_lr.png)
 
@@ -50,7 +52,7 @@ This algorithm clearly did the best at predicting stroke. However, when we look 
 
 ## 5. Predicting Ability
 
-We can see that our Logistic Regression Model actually was able to predict 84% of true stroke victims as stroke and 69% of non-stroke patients as having no stroke in our hold out test dataset. 
+We can see that our Logistic Regression Model actually was able to predict 88% of true stroke victims as stroke and 73% of non-stroke patients as having no stroke in our hold out test dataset. 
 
 ![](./files/predictions.png)
 
